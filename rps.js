@@ -1,5 +1,6 @@
 rps = ['Rock', 'Paper', 'Scissors'];
 
+
 //variables
 
 var usersChoice = rps[1]
@@ -46,4 +47,4 @@ console.log(letsStart)
 
 // debugger
 
-// debugger
+
