@@ -32,12 +32,24 @@ function winLose(computerChoice, usersChoice, rps)  {
   else {
     result = 'Computer Won';
   }
+
   return result;
 }
 
 startButton.addEventListener("click", function() {
-
   letsStart.className = "";
+});
+
+rockButton.addEventListener("click", function() {
+  selectRock.className = "";
+});
+
+paperButton.addEventListener("click", function() {
+  selectPaper.className = "";
+});
+
+scissorsButton.addEventListener("click", function() {
+  selectScissors.className = "";
 });
 
 //testing
