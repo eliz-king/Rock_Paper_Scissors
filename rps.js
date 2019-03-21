@@ -73,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
     userChoiceEl.innerHTML = "Your choice: " + usersChoice;
   }
 
+
   function printResults(result) {
     resultEl.innerHTML = "Result: " + result;
   }
@@ -83,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     compChoiceEl.innerHTML = "";
     resultEl.innerHTML = "";
   }
+
 
 
   // listeners
