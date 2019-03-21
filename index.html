@@ -12,19 +12,32 @@
     <div id="user">
       <form>
         <p>Enter user's name:</p>
-<input id="user-name" type="text-field" required>
-        <button type="button" id="start-button">Start Game</button>
+        <input id="user-name" type="text-field" required>
+        <button type="button" id="start-button" class="hide" >Start Game</button>
       </form>
     </div>
-    <div class="game-field">
-      <p id="welcome" class="welcome"> Let's get started</p>
+    <div id="game" class="game-field-hid">
+      <h3 id="welcome" class="welcome"> Make a choice:</h3>
+      <ul id="choices">
+        <li><img id="choice1" class="choice" src="./img/thumb_6917_rockpaperscissors copy.jpg" alt="Rock" width=200 height=220></li>
+        <li><img id="choice2" class="choice" src="./img/thumb_6917_rockpaperscissors copy 2.jpg" alt="Paper" width=200 height=220></li>
+        <li><img id="choice3" class="choice" src="./img/thumb_6917_rockpaperscissors.jpeg" alt="Scissors" width=200 height=220></li>
+      </ul>
+      <select id="choice-picker">
+        <option id="rock" value="Rock">Rock</option>
+        <option id="paper" value="Paper">Paper</option>
+        <option id="scissors" value="Scissors">Scissors</option>
+      </select>
+
+      <button type="button" id="submit-choice"> Submit </button>
+
+      <p id="usersChoice"></p>
+      <p id="compsChoice"></p>
+      <p id="result"></p>
+      <p id="tracker"></p>
     </div>
   </div>
 </body>
 
 <script src="rps.js"></script>
-<script
-  src="http://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
 </html>
