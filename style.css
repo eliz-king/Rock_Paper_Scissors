@@ -1,3 +1,20 @@
-.welcome {
+/* .welcome {
   visibility: hidden;
+} */
+
+#start-button.vis {
+}
+
+#start-button.hide {
+  visibility: hidden;
+}
+
+
+#game.game-field-hid {
+  visibility: hidden;
+}
+
+#choices {
+  display: inline;
+  list-style-type: none;
 }

@@ -12,12 +12,19 @@
     <div id="user">
       <form>
         <p>Enter user's name:</p>
-<input id="user-name" type="text-field" required>
-        <button type="button" id="start-button">Start Game</button>
+        <input id="user-name" type="text-field" required>
+        <button type="button" id="start-button" class="hide" >Start Game</button>
       </form>
     </div>
-    <div class="game-field">
-      <p id="welcome" class="welcome"> Let's get started</p>
+    <div id="game" class="game-field-hid">
+      <h3 id="welcome" class="welcome"> Make a choice:</h3>
+      <ul id="choices">
+        <li>
+          <img id="choice1" class="choice" src="./img/thumb_6917_rockpaperscissors copy.jpg" alt="Rock" width=200 height=220>
+          <img id="choice2" class="choice" src="./img/thumb_6917_rockpaperscissors copy 2.jpg" alt="Paper" width=200 height=220>
+          <img id="choice3" class="choice" src="./img/thumb_6917_rockpaperscissors.jpeg" alt="Scissors" width=200 height=220>
+        </li>
+      </ul>
     </div>
   </div>
 </body>

@@ -1,50 +1,79 @@
-rps = ['Rock', 'Paper', 'Scissors'];
+document.addEventListener("DOMContentLoaded", function () {
+
+  rps = ['Rock', 'Paper', 'Scissors'];
 
 
-//variables
+  //variables
+  var usersChoice;
+  // var computerChoice = compChoice(rps)
 
-var usersChoice = rps[1]
-var computerChoice = compChoice(rps)
-var result = winLose(computerChoice, usersChoice, rps)
+  // HTML elements 
+  var startButton = document.getElementById('start-button')
+  var userNameField = document.getElementById('user-name')
+  var game = document.getElementById('game')
 
-// HTML elements 
-var startButton = document.getElementById('start-button')
-var userNameField = document.getElementById('user-name')
-var userName;
-var letsStart = document.getElementsById('welcome')
+  var rock = document.getElementById("choice1")
+  var paper = document.getElementById("choice2")
+  var scissors = document.getElementById("choice3")
 
-// back end functions
+  // back end functions
 
-function compChoice(rps) {
-  var choice = rps[Math.floor(Math.random() * rps.length)];
-  return choice;
-}
-
-function winLose(computerChoice, usersChoice, rps)  {
-  var result = null
-
-  if (usersChoice == compChoice) {
-     result = 'Draw';
+  function compChoice(rps) {
+    var choice = rps[Math.floor(Math.random() * rps.length)];
+    console.log(choice)
+    return choice;
   }
-  else if (((usersChoice == rps[0]) && (computerChoice == rps[2])) || ((usersChoice == rps[1]) && (computerChoice == rps[0])) || ((usersChoice == rps[2]) && (computerChoice == rps[1]))) {
-     result = 'You won' ;
+
+  function winLose(computerChoice, usersChoice, rps) {
+    var result = null
+    // debugger
+    if (usersChoice == compChoice) {
+      result = 'Draw';
+    }
+    else if (((usersChoice == rps[0]) && (computerChoice == rps[2])) || ((usersChoice == rps[1]) && (computerChoice == rps[0])) || ((usersChoice == rps[2]) && (computerChoice == rps[1]))) {
+      result = 'You won';
+    }
+    else {
+      result = 'Computer Won';
+    }
+    console.log(result);
+    return result;
   }
-  else {
-    result = 'Computer Won';
+
+
+  function registerChoice(usersChoice) {
+    // var usersChoice = null
+    rock.addEventListener('click', function () {
+      return usersChoice = rps[0]
+    })
+    paper.addEventListener('click', function () {
+      return usersChoice = rps[1]
+    })
+    scissors.addEventListener('click', function () {
+      return usersChoice = rps[2]
+    })
+  };
+
+  // listeners
+  userNameField.addEventListener('keyup', function (event) {
+    if (event.target.value !== '') {
+      startButton.className = "vis";
+    } else {
+      startButton.className = "hide";
+    }
+  })
+
+  startButton.addEventListener('click', startGame);
+
+  function startGame() {
+    game.className = "game-field-show";
+    registerChoice()
+
+    if (usersChoice != null) {
+      winLose( usersChoice,compChoice, rps)
+    }
+    else {
+      console.log("user choice was null")
+    }
   }
-  return result;
-}
-
-startButton.addEventListener("click", function() {
-
-  letsStart.className = "";
-});
-
-//testing
-console.log(compChoice(rps))
-console.log(result)
-console.log(letsStart)
-
-// debugger
-
-
+})
