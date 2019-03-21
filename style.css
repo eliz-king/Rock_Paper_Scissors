@@ -14,7 +14,11 @@
   visibility: hidden;
 }
 
-#choices {
+#choices li {
   display: inline;
+  
+}
+
+#choices {
   list-style-type: none;
 }
