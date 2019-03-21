@@ -11,7 +11,8 @@ var result = winLose(computerChoice, usersChoice, rps)
 var startButton = document.getElementById('start-button')
 var userNameField = document.getElementById('user-name')
 var userName;
-var letsStart = document.getElementsById('welcome')
+var letsStart = document.getElementById('welcome')
+var displayRps = document.getElementById('displayRps')
 
 // back end functions
 
@@ -36,8 +37,25 @@ function winLose(computerChoice, usersChoice, rps)  {
   return result;
 }
 
+
+function displayGame() {
+  var rock = document.createElement('button');
+  rock.innerHTML = "Rock";
+  displayRps.appendChild(rock);
+
+  var paper = document.createElement('button');
+  paper.innerHTML = "paper";
+  displayRps.appendChild(paper);
+
+  var scissors = document.createElement('button');
+  scissors.innerHTML = "Scissors";
+  displayRps.appendChild(scissors);
+}
+
 startButton.addEventListener("click", function() {
-  letsStart.className = "";
+  // letsStart.className = "";
+  displayGame();
+
 });
 
 rockButton.addEventListener("click", function() {
